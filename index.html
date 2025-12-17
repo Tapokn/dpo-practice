@@ -17,67 +17,79 @@
 
 <body>  
     <header class="header">
-        <a class="header__logo">Avion</a>
-        <div class="header__actions">
-            <button class="header__action-btn" type="button" title="Поиск">
-                <img src="assets/icons/search.png" alt="Поиск" width="24" height="24">
-            </button>
-            <button class="header__action-btn" type="button" title="Корзина">
-                <img src="assets/icons/shopping--cart.png" alt="Корзина" width="24" height="24">
-            </button>
-            <button class="header__action-btn" type="button" title="Профиль">
-                <img src="assets/icons/avatar.png" alt="Профиль" width="24" height="24">
-            </button>
-        </div>
-        <nav class="header__nav nav">
-            <ul class="nav__list">
-                <li><a class="" href="#hero">Главная</a></li>
-                <li><a href="#difference">Отличия бренда</a></li>
-                <li><a href="#newceramic">Новая керамика</a></li>
-                <li><a href="#popular">Популярное</a></li>
-                <li><a href="#club">Клуб</a></li>
-                <li><a class="" href="#history">История бренда</a></li>
-            </ul>
-        </nav>
+            <a class="header__logo">Avion</a>
+        <div class="container container_place_header"></div>
+            <div class="header__actions">
+                <button class="header__action-btn" type="button" title="Поиск">
+                    <img src="assets/icons/search.png" alt="Поиск">
+                </button>
+                <button class="header__action-btn" type="button" title="Корзина">
+                    <img src="assets/icons/shopping--cart.png" alt="Корзина" >
+                </button>
+                <button class="header__action-btn" type="button" title="Профиль">
+                    <img src="assets/icons/avatar.png" alt="Профиль" >
+                </button>
+            </div>
+            <nav class="header__nav nav">
+                <ul class="nav__list">
+                    <li><a href="#hero">Главная</a></li>
+                    <li><a href="#difference">Отличия бренда</a></li>
+                    <li><a href="#newceramic">Новая керамика</a></li>
+                    <li><a href="#popular">Популярное</a></li>
+                    <li><a href="#club">Клуб</a></li>
+                    <li><a href="#history">История бренда</a></li>
+                </ul>
+            </nav>
         
-        
+       </div> 
     </header>
     
-    <main>
+    <main class="container container_place_main">
     <!-- Главный промо-блок -->
-    <section id="hero">
-        <h1>Мебельный бренд для будущего с&nbsp;вечным дизайном</h1>
-        <img src="assets/imj/Right_Image.png" alt="Дизайнерское кресло" width="520" height="585">
-        <a href="#">Смотреть коллекцию</a>
-        <p>Новая эра в&nbsp;экологичной мебели от&nbsp;Avion...</p>
-    </section>
-    
-    <!-- Преимущества бренда -->
-    <section id="difference">
-        <h2>Что отличает наш бренд</h2>
-        <div>
-            <article>
-                <img src="assets/icons/delivery.png" alt="Доставка" width="24" height="24">
-                <h3>Доставка на следующий день</h3>
-                <p>Закажите до&nbsp;15:00 и&nbsp;получите заказ на&nbsp;следующий день</p>
-            </article>
-            <article>
-                <img src="assets/icons/chekmark.png" alt="Доставка" width="24" height="24">
-                <h3>Сделано из&nbsp;натуральных материалов</h3>
-                <p>От&nbsp;кроватей до&nbsp;стульев&nbsp;&mdash; из&nbsp;природных материалов</p>
-            </article>
-            <article>
-                <img src="assets/icons/purchase.png" alt="Доставка" width="24" height="24">
-                <h3>Бесплатная доставка</h3>
-                <p>Бесплатная доставка по&nbsp;Великобритании при заказе от&nbsp;£250</p>
-            </article>
-            <article>
-                <img src="assets/icons/sprout.png" alt="Доставка" width="24" height="24">
-                <h3>Перерабатываемая упаковка</h3>
-                <p>Каждая наша упаковка&nbsp;&mdash; это 100% перерабатываемый материал.</p>
-            </article>
+    <section id="hero" class="hero hero--dark">
+        <div class="hero__content">
+            <h1 class="hero__title">Мебельный бренд для будущего с&nbsp;вечным дизайном</h1>
+            <a class="hero__btn" href="#">Смотреть коллекцию</a>
+            <p class="hero__text">Новая эра в&nbsp;экологичной мебели от&nbsp;Avion...</p>
+        </div>
+
+        <div class="hero__media">
+            <img class="hero__img" src="assets/imj/Right_Image.png" alt="Дизайнерское кресло">
         </div>
     </section>
+   
+    
+    <!-- Преимущества бренда -->
+   <section id="difference" class="advantages">
+  <h2 class="advantages__title">Что отличает наш бренд</h2>
+
+  <div class="advantages__grid">
+    <article class="advantages__item">
+      <img class="advantages__icon" src="assets/icons/delivery.png" alt="Доставка" width="24" height="24">
+      <h3 class="advantages__heading">Доставка на следующий день</h3>
+      <p class="advantages__text">Закажите до&nbsp;15:00 и&nbsp;получите заказ на&nbsp;следующий день</p>
+    </article>
+
+    <article class="advantages__item">
+      <img class="advantages__icon" src="assets/icons/chekmark.png" alt="Качество" width="24" height="24">
+      <h3 class="advantages__heading">Сделано из&nbsp;натуральных материалов</h3>
+      <p class="advantages__text">От&nbsp;кроватей до&nbsp;стульев&nbsp;&mdash; из&nbsp;природных материалов</p>
+    </article>
+
+    <article class="advantages__item">
+      <img class="advantages__icon" src="assets/icons/purchase.png" alt="Покупка" width="24" height="24">
+      <h3 class="advantages__heading">Бесплатная доставка</h3>
+      <p class="advantages__text">Бесплатная доставка по&nbsp;Великобритании при заказе от&nbsp;£250</p>
+    </article>
+
+    <article class="advantages__item">
+      <img class="advantages__icon" src="assets/icons/sprout.png" alt="Упаковка" width="24" height="24">
+      <h3 class="advantages__heading">Перерабатываемая упаковка</h3>
+      <p class="advantages__text">Каждая наша упаковка&nbsp;&mdash; это 100% перерабатываемый материал.</p>
+    </article>
+  </div>
+</section>
+
     
     <!-- Новые керамические изделия -->
     <section id="newceramic">
@@ -147,10 +159,11 @@
 Мы&nbsp;живем и&nbsp;дышим идеей создания мебели и&nbsp;предметов интерьера ручной работы, в&nbsp;которые вложена душа. Это вдохновение привело к&nbsp;открытию нашего бутика в&nbsp;Челси, вскоре ставшего культовым местом притяжения для ценителей дизайна в&nbsp;Лондоне.</p>
         <button>Связаться с&nbsp;нами</button>
     </section>
+    </div>
     </main>
    
  
- <footer>
+ <footer class="container container_place_footer">
     <div>
         <section>
             <h4>Меню</h4>

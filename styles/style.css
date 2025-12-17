@@ -5,8 +5,20 @@ text-decoration: none;
 color: 716d8d;
 }
 /*шрифты*/
+html { font-family: "Jost", sans-serif; font-weight: 340;}
 
+/* ---------------------------------------------КОНТЕЙНЕРЫ ДЛЯ ОТСУПОВ------------------------------------------------------------------ */
+.container {
+  margin-inline: auto;
+  max-width: 1886px;
+}
 
+/* разные отступы по зонам */
+.container_place_header { padding-inline: clamp(16px, 5vw, 38px); }
+.container_place_main   { padding-inline: clamp(16px, 7vw, 104px); }
+.container_place_footer { padding-inline: clamp(16px, 7vw, 115px); }
+
+/* -----------------------------------БЛОК 0. ХЭДЕР---------------------------------------------------------------------------- */
 /* СТИЛИ ДЛЯ HEADER */
 .header {
   display: flex;
@@ -71,14 +83,160 @@ color: 716d8d;
   padding: 0;
 }
 
-.card {
-  padding: 1rem;
-  border: 1px solid #ddd;
+/* -----------------------------------------------БЛОК 1 ГЕРОЙ----------------------------------------------------------- */
+.hero {
+  /* hero теперь живёт внутри .container и занимает его ширину */
+  width: 100%;
+  aspect-ratio: 1678 / 766;   /* если нужно сохранять пропорцию */
+  display: flex;
+  overflow: hidden;
+
+}
+
+
+
+.hero--dark {
+  background: #29244a;
+  color: #fff;
+}
+
+/* левая колонка = 656/1100 ≈ 59.64% */
+.hero__content {
+  flex: 0 1 min(996px, 59.75%);
+
+  /* margin: top/bottom 110, left/right 104 */
+  margin: clamp(24px, 6vw, 110px) clamp(16px, 5.5vw, 104px);
+
+  /* padding: top/bottom 110, left/right 90 */
+  padding: clamp(20px, 6vw, 110px) clamp(16px, 5vw, 90px);
+
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.8vw, 20px);
+}
+
+
+.hero__title,
+.hero__text {
+  margin: 0;
+  color: #fff;
+}
+
+.hero__btn {
+  width: var(--btn-w);
+  height: var(--btn-h);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 14px 30px;
+  font-family: var(--font-family);
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  outline: 0;
+
+  margin-bottom: 15px;
+  transition: background .3s ease-in-out, border .3s ease-in-out, opacity .3s ease-in-out;
+  
+}
+
+/* правая часть занимает остаток */
+.hero__media {
+  flex: 1;
+  min-width: 0; /* чтобы картинка нормально ужималась в flex */
+}
+
+.hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+/* ---------------------------------------------БЛОК 2 ОТЛИЧИЯ----------------------------------------------------------------- */
+.advantages {
+  padding-block: clamp(32px, 5vw, 80px);
+}
+
+.advantages__title {
+  margin: 0 0 clamp(24px, 4vw, 48px);
+  text-align: center;
+  font-weight: 400;
+  font-size: clamp(22px, 2vw, 32px);
+  color: #211f2d;
+}
+
+/* GRID: 4 колонки на десктопе, ужимается автоматически */
+.advantages__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 32px); /* расстояние между карточками */
+}
+
+/* 2 колонки */
+@media (max-width: 1024px) {
+  .advantages__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 1 колонка */
+@media (max-width: 560px) {
+  .advantages__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CARD */
+.advantages__item {
+  /* “одна колонка 405×257” — это макет на большом экране, поэтому делаем:
+     фикс max-width 405 и нормальную адаптацию вниз */
+  max-width: 405px;
+  min-height: 257px;
+
+  /* чтобы карточки не прилипали в сетке и могли центрироваться */
+  width: 100%;
+  justify-self: center;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 46px; /* как ты просишь: иконка->h3 и h3->p [web:244] */
+
+  padding: clamp(16px, 2vw, 24px);
+  background: #fff;
+  border: 1px solid #e6e6e6;
   border-radius: 8px;
 }
 
-.card--featured {
-  background: #f8f9fa;
-  border-color: #2c5530;
+/* ICON */
+.advantages__icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
+/* TEXTS */
+.advantages__heading {
+  margin: 0;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 140%;
+  color: #211f2d;
+}
+
+.advantages__text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 150%;
+  color: #716d8d;
+}
+/* --------------------------------------------------------------------------------------------------------------- */
