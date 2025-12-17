@@ -1,45 +1,84 @@
 
+/*СБРОС ОСТАЛЬНОГО*/
+a {
+text-decoration: none;
+color: 716d8d;
+}
+/*шрифты*/
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+
+/* СТИЛИ ДЛЯ HEADER */
+.header {
+  display: flex;
+  flex-direction: column; /* Оставляем колонку */
+  align-items: center; /* Центрируем по горизонтали */
+  padding: 1rem;
+  background: #fff;
+  
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-    display: block;
+
+.header__logo {
+  font-family: "Jost", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem; /* Отступ снизу для навигации */
+  color: #211f2d ;
 }
-body {
-    line-height: 1;
+
+/* КОНТЕЙНЕР ДЛЯ КНОПОК СПРАВА ОТ ЛОГОТИПА */
+.header__actions {
+  position: absolute; /* Абсолютное позиционирование */
+  top: 1rem; /* На уровне верхнего отступа header */
+  right: 1rem; /* Прижимаем к правому краю */
+  display: flex; /* Кнопки в ряд */
+  gap: 0.5rem; /* Расстояние между кнопками */
+  align-items: center;
+
 }
-ol, ul {
-    list-style: none;
+
+/* СТИЛИ ДЛЯ КНОПОК */
+.header__action-btn {
+  background: transparent; /* Прозрачный фон */
+  border: none; /* Убираем рамку */
+  padding: 0.5rem; /* Внутренний отступ - определяет кликабельную область */
+  cursor: pointer; /* Курсор-указатель */
+  display: flex; /* Для центрирования иконки */
+  align-items: center; /* Вертикальное центрирование */
+  justify-content: center; /* Горизонтальное центрирование */
 }
-blockquote, q {
-    quotes: none;
+
+/* ИКОНКИ ВНУТРИ КНОПОК */
+.header__action-btn img {
+  width: 1.5em; /* Размер зависит от шрифта (динамический) */
+  height: 1.5em; /* Размер зависит от шрифта (динамический) */
+  object-fit: contain; /* Сохраняем пропорции */
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
+
+/* НАВИГАЦИЯ ПОД ЛОГОТИПОМ */
+.header__nav {
+  width: 100%; /* На всю ширину */
 }
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
+
+.nav__list {
+  font-family: "Jost", sans-serif;
+  font-weight: 350;
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  justify-content: center; /* Центрируем пункты меню */
+  margin: 0;
+  padding: 0;
 }
+
+.card {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.card--featured {
+  background: #f8f9fa;
+  border-color: #2c5530;
+}
+

@@ -5,40 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avion</title>
     <link rel="icon" href="assets/logotipe.png" type="image/x-icon" sizes="64x64">
+    <link rel="stylesheet" href="styles/resetcss.css">
     <link rel="stylesheet" href="styles/style.css">
+   
+     <!-- шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
 </head>
 
 <body>  
-    <header>
-        <a href="/">Avion</a>
-        <nav>
-            <ul>
-                <li><a href="#">Цветочные горшки</a></li>
-                <li><a href="#">Керамика</a></li>
-                <li><a href="#">Столы</a></li>
-                <li><a href="#">Стулья</a></li>
-                <li><a href="#">Посуда</a></li>
-                <li><a href="#">Столовые приборы</a></li>
-                <li><a href="#">Приборы</a></li>
-            </ul>
-        </nav>
-        
-        <div>
-            <button type="button" title="Поиск">
+    <header class="header">
+        <a class="header__logo">Avion</a>
+        <div class="header__actions">
+            <button class="header__action-btn" type="button" title="Поиск">
                 <img src="assets/icons/search.png" alt="Поиск" width="24" height="24">
             </button>
-            <button type="button" title="Корзина">
+            <button class="header__action-btn" type="button" title="Корзина">
                 <img src="assets/icons/shopping--cart.png" alt="Корзина" width="24" height="24">
             </button>
-            <button type="button" title="Профиль">
+            <button class="header__action-btn" type="button" title="Профиль">
                 <img src="assets/icons/avatar.png" alt="Профиль" width="24" height="24">
             </button>
         </div>
+        <nav class="header__nav nav">
+            <ul class="nav__list">
+                <li><a class="" href="#hero">Главная</a></li>
+                <li><a href="#difference">Отличия бренда</a></li>
+                <li><a href="#newceramic">Новая керамика</a></li>
+                <li><a href="#popular">Популярное</a></li>
+                <li><a href="#club">Клуб</a></li>
+                <li><a class="" href="#history">История бренда</a></li>
+            </ul>
+        </nav>
+        
+        
     </header>
     
     <main>
     <!-- Главный промо-блок -->
-    <section>
+    <section id="hero">
         <h1>Мебельный бренд для будущего с&nbsp;вечным дизайном</h1>
         <img src="assets/imj/Right_Image.png" alt="Дизайнерское кресло" width="520" height="585">
         <a href="#">Смотреть коллекцию</a>
@@ -46,7 +53,7 @@
     </section>
     
     <!-- Преимущества бренда -->
-    <section>
+    <section id="difference">
         <h2>Что отличает наш бренд</h2>
         <div>
             <article>
@@ -73,7 +80,7 @@
     </section>
     
     <!-- Новые керамические изделия -->
-    <section>
+    <section id="newceramic">
         <h2>Новая керамика</h2>
         <div>
             <article>
@@ -101,7 +108,7 @@
     </section>
     
     <!-- Популярные товары -->
-    <section>
+    <section id="popular">
         <h2>Наши популярные товары</h2>
         <div>
             <article>
@@ -124,7 +131,7 @@
     </section>
     
     <!-- Подписка на рассылку -->
-    <section>
+    <section id="club">
         <h2>Присоединяйтесь к&nbsp;клубу и&nbsp;получайте преимущества</h2>
         <p>Подпишитесь на&nbsp;рассылку и&nbsp;получайте эксклюзивные предложения...</p>
         <form>
@@ -134,7 +141,7 @@
     </section>
     
     <!-- История бренда -->
-    <section>
+    <section id="history">
         <h2>От&nbsp;студии в&nbsp;Лондоне до&nbsp;глобального бренда</h2>
         <p>Наш путь начался в&nbsp;маленькой лондонской студии, а&nbsp;сегодня Avion&nbsp;&mdash; глобальный бренд с&nbsp;сетью из&nbsp;более чем 400&nbsp;магазинов. В&nbsp;основе нашего роста&nbsp;&mdash; неизменная философия: дарить рынку безупречное качество по&nbsp;доступной цене.
 Мы&nbsp;живем и&nbsp;дышим идеей создания мебели и&nbsp;предметов интерьера ручной работы, в&nbsp;которые вложена душа. Это вдохновение привело к&nbsp;открытию нашего бутика в&nbsp;Челси, вскоре ставшего культовым местом притяжения для ценителей дизайна в&nbsp;Лондоне.</p>
