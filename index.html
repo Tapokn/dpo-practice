@@ -126,27 +126,46 @@
 
     
     <!-- Популярные товары -->
-    <section id="popular">
-        <h2>Наши популярные товары</h2>
-        <div>
-            <article>
-                <img src="assets/imj/Large.png" alt="Диван Poplar из замши" width="630" height="375">
-                <h3><a href="#">Диван Poplar из&nbsp;замши</a></h3>
-                <p>£980</p>
-            </article>
-            <article>
-                <img src="assets/imj/Photo.png" alt="Кресло Dandy" width="305" height="375">
-                <h3><a href="#">Кресло Dandy</a></h3>
-                <p>£250</p>
-            </article>
-            <article>
-                <img src="assets/imj/Photo(3).png" alt="Кресло Dandy" width="305" height="375">
-                <h3><a href="#">Стул Dandy</a></h3>
-                <p>£250</p>
-            </article>
-        </div>
-        <a href="#">Смотреть коллекцию</a>
-    </section>
+    <section id="popular" class="products products--popular">
+  <h2 class="products__title">Наши популярные товары</h2>
+
+  <div class="products__grid products__grid--3">
+    <article class="product-card product-card--popular">
+      <div class="product-card__media">
+        <img class="product-card__img" src="assets/imj/Large.png" alt="Диван Poplar из замши">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title">
+          <a class="product-card__link" href="#">Диван Poplar из&nbsp;замши</a>
+        </h3>
+        <p class="product-card__price">£980</p>
+      </div>
+    </article>
+
+    <article class="product-card product-card--popular">
+      <div class="product-card__media">
+        <img class="product-card__img" src="assets/imj/Photo.png" alt="Кресло Dandy">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title"><a class="product-card__link" href="#">Кресло Dandy</a></h3>
+        <p class="product-card__price">£250</p>
+      </div>
+    </article>
+
+    <article class="product-card product-card--popular">
+      <div class="product-card__media">
+        <img class="product-card__img" src="assets/imj/Photo(3).png" alt="Стул Dandy">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title"><a class="product-card__link" href="#">Стул Dandy</a></h3>
+        <p class="product-card__price">£250</p>
+      </div>
+    </article>
+  </div>
+
+  <a class="products__cta" href="#">Смотреть коллекцию</a>
+</section>
+
     
     <!-- Подписка на рассылку -->
     <section id="club">
