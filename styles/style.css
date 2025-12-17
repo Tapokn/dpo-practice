@@ -240,3 +240,114 @@ html { font-family: "Jost", sans-serif; font-weight: 340;}
   color: #716d8d;
 }
 /* --------------------------------------------------------------------------------------------------------------- */
+
+/* SECTION */
+.products {
+  padding-block: clamp(32px, 5vw, 80px);
+}
+
+.products__title {
+  margin: 0 0 clamp(24px, 4vw, 48px);
+  text-align: center;
+  font-weight: 400;
+  font-size: clamp(22px, 2vw, 32px);
+  color: #211f2d;
+}
+
+/* GRID */
+.products__grid {
+  display: grid;
+
+  /* 4 колонки на широком экране */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 27px; /* расстояние между карточками [web:244] */
+}
+
+/* 2 колонки на планшете */
+@media (max-width: 1024px) {
+  .products__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+/* 1 колонка на телефоне */
+@media (max-width: 560px) {
+  .products__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* CARD */
+.product-card {
+  /* “карточка около 428×642” — фиксировать пиксель-в-пиксель нельзя для мобилки,
+     поэтому задаём max, а вниз она сжимается сама */
+  max-width: 428px;
+  width: 100%;
+  justify-self: center;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* IMAGE */
+.product-card__img {
+  width: 100%;
+  aspect-ratio: 429 / 524; /* держим пропорцию картинки */
+  object-fit: cover;       /* заполняет блок без искажения [web:333] */
+  display: block;
+}
+
+/* Title is 30px below image */
+.product-card__title {
+  margin: 30px 0 0;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 140%;
+}
+
+.product-card__link {
+  color: #211f2d;
+  text-decoration: none;
+}
+
+/* Text is 40px below image, and price 30px below text
+   (у тебя title = “главный текст”, поэтому делаем: title->price = 30,
+    а если нужен ещё один текст — добавишь .product-card__desc с margin-top:40) */
+.product-card__price {
+  margin: 30px 0 0;
+  font-size: 18px;
+  line-height: 150%;
+  color: #211f2d;
+}
+
+
+.products__cta {
+  /* центрируем саму кнопку */
+  display: flex;
+  width: fit-content;
+  margin: clamp(24px, 4vw, 48px) auto 0; /* сверху отступ, по бокам auto -> по центру */
+
+  /* вид кнопки */
+  background-color: #f6f6f6; /* фон [web:352] */
+  color: #211f2d;
+  text-decoration: none;
+  border: none;
+
+  /* внутренние отступы как в макете */
+  padding: 34px 47px; /* top/bottom 34, left/right 47 [web:227] */
+
+  /* минимальные габариты “как в макете” */
+  min-width: 242px;
+  min-height: 76px;
+
+  /* центрирование текста внутри */
+  align-items: center;
+  justify-content: center;
+
+  /* типографика (подстрой под макет) */
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 400;
+}
