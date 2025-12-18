@@ -1,11 +1,14 @@
-
-/*СБРОС ОСТАЛЬНОГО*/
-a {
-text-decoration: none;
-color: 716d8d;
+/*Шрифты*/
+.page {
+  font-family: "Jost", sans-serif;
+  font-weight: 340;
 }
-/*шрифты*/
-html { font-family: "Jost", sans-serif; font-weight: 340;}
+
+/*Ссылки*/
+.link {
+  text-decoration: none;
+  color: #716d8d;
+}
 
 /* ---------------------------------------------КОНТЕЙНЕРЫ ДЛЯ ОТСУПОВ------------------------------------------------------------------ */
 .container {
@@ -14,19 +17,27 @@ html { font-family: "Jost", sans-serif; font-weight: 340;}
 }
 
 /* разные отступы по зонам */
-.container_place_header { padding-inline: clamp(16px, 5vw, 38px); }
-.container_place_main   { padding-inline: clamp(16px, 7vw, 104px); }
-.container_place_footer { padding-inline: clamp(16px, 7vw, 115px); }
+.container_place_header {
+  padding-inline: clamp(16px, 5vw, 38px);
+}
+
+.container_place_main {
+  padding-inline: clamp(16px, 7vw, 104px);
+}
+
+.container_place_footer {
+  padding-inline: clamp(16px, 7vw, 115px);
+}
 
 /* -----------------------------------БЛОК 0. ХЭДЕР---------------------------------------------------------------------------- */
 /* СТИЛИ ДЛЯ HEADER */
 .header {
   display: flex;
-  flex-direction: column; /* Оставляем колонку */
-  align-items: center; /* Центрируем по горизонтали */
+  flex-direction: column;
+  align-items: center;
   padding: 1rem;
   background: #fff;
-  
+
 }
 
 .header__logo {
@@ -34,42 +45,45 @@ html { font-family: "Jost", sans-serif; font-weight: 340;}
   font-size: 1.5rem;
   font-weight: 400;
   text-align: center;
-  margin-bottom: 1rem; /* Отступ снизу для навигации */
-  color: #211f2d ;
+  margin-bottom: 1rem;
+  /* Отступ снизу для навигации */
+  color: #211f2d;
 }
 
 /* КОНТЕЙНЕР ДЛЯ КНОПОК СПРАВА ОТ ЛОГОТИПА */
 .header__actions {
-  position: absolute; /* Абсолютное позиционирование */
-  top: 1rem; /* На уровне верхнего отступа header */
-  right: 1rem; /* Прижимаем к правому краю */
-  display: flex; /* Кнопки в ряд */
-  gap: 0.5rem; /* Расстояние между кнопками */
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
   align-items: center;
 
 }
 
 /* СТИЛИ ДЛЯ КНОПОК */
 .header__action-btn {
-  background: transparent; /* Прозрачный фон */
-  border: none; /* Убираем рамку */
-  padding: 0.5rem; /* Внутренний отступ - определяет кликабельную область */
-  cursor: pointer; /* Курсор-указатель */
-  display: flex; /* Для центрирования иконки */
-  align-items: center; /* Вертикальное центрирование */
-  justify-content: center; /* Горизонтальное центрирование */
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 /* ИКОНКИ ВНУТРИ КНОПОК */
 .header__action-btn img {
-  width: 1.5em; /* Размер зависит от шрифта (динамический) */
-  height: 1.5em; /* Размер зависит от шрифта (динамический) */
-  object-fit: contain; /* Сохраняем пропорции */
+  width: 1.5em;
+  height: 1.5em;
+  object-fit: contain;
 }
 
 /* НАВИГАЦИЯ ПОД ЛОГОТИПОМ */
 .header__nav {
-  width: 100%; /* На всю ширину */
+  width: 100%;
+  /* На всю ширину */
 }
 
 .nav__list {
@@ -78,24 +92,42 @@ html { font-family: "Jost", sans-serif; font-weight: 340;}
   display: flex;
   gap: 1rem;
   list-style: none;
-  justify-content: center; /* Центрируем пункты меню */
-  margin: 0;
-  padding: 0;
+  justify-content: center;
+  /* Центрируем пункты меню */
+}
+
+/* базовый вид ссылки меню */
+
+/* hover */
+.header .link:hover {
+  background-color: rgba(41, 36, 74, 0.08);
+  color: #211f2d;
+  transform: translateY(-1px);
+}
+
+/* focus (для клавиатуры) */
+.header .link:focus-visible {
+  outline: 2px solid #29244a;
+  outline-offset: 2px;
+}
+
+/* active (при нажатии) */
+.header .link:active {
+  transform: translateY(0);
+  background-color: rgba(41, 36, 74, 0.16);
 }
 
 /* -----------------------------------------------БЛОК 1 ГЕРОЙ----------------------------------------------------------- */
 .hero {
-  /* hero теперь живёт внутри .container и занимает его ширину */
   width: 100%;
-  aspect-ratio: 1678 / 766;   /* если нужно сохранять пропорцию */
+  aspect-ratio: 1678 / 766;
+  /* если нужно сохранять пропорцию */
   display: flex;
-  overflow: hidden;
-
 }
 
 
 
-.hero--dark {
+.hero_dark {
   background: #29244a;
   color: #fff;
 }
@@ -103,13 +135,8 @@ html { font-family: "Jost", sans-serif; font-weight: 340;}
 /* левая колонка = 656/1100 ≈ 59.64% */
 .hero__content {
   flex: 0 1 min(996px, 59.75%);
-
-  /* margin: top/bottom 110, left/right 104 */
-  margin: clamp(24px, 6vw, 110px) clamp(16px, 5.5vw, 104px);
-
   /* padding: top/bottom 110, left/right 90 */
   padding: clamp(20px, 6vw, 110px) clamp(16px, 5vw, 90px);
-
   display: flex;
   flex-direction: column;
   gap: clamp(12px, 1.8vw, 20px);
@@ -133,7 +160,7 @@ html { font-family: "Jost", sans-serif; font-weight: 340;}
   color: #fff;
   text-decoration: none;
   border: 1px solid rgba(255, 255, 255, 0.35);
-    padding: 14px 30px;
+  padding: 14px 30px;
   font-family: var(--font-family);
 
   font-weight: 400;
@@ -143,26 +170,44 @@ html { font-family: "Jost", sans-serif; font-weight: 340;}
 
   margin-bottom: 15px;
   transition: background .3s ease-in-out, border .3s ease-in-out, opacity .3s ease-in-out;
-  
+
+}
+
+/* hover */
+.hero__btn:hover {
+  background: rgba(255, 255, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+/* focus (клавиатура) */
+.hero__btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* active */
+.hero__btn:active {
+  transform: scale(0.98);
+  opacity: 0.9;
 }
 
 /* правая часть занимает остаток */
 .hero__media {
   flex: 1;
-  min-width: 0; /* чтобы картинка нормально ужималась в flex */
+  min-width: 0;
+  /* чтобы картинка нормально ужималась в flex */
 }
 
 .hero__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
 }
 
 
 
 /* ---------------------------------------------БЛОК 2 ОТЛИЧИЯ----------------------------------------------------------------- */
-.advantages {
+.page__section {
   padding-block: clamp(32px, 5vw, 80px);
 }
 
@@ -178,7 +223,8 @@ html { font-family: "Jost", sans-serif; font-weight: 340;}
 .advantages__grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(16px, 2vw, 32px); /* расстояние между карточками */
+  gap: clamp(16px, 2vw, 32px);
+  /* расстояние между карточками */
 }
 
 /* 2 колонки */
@@ -209,7 +255,8 @@ html { font-family: "Jost", sans-serif; font-weight: 340;}
   display: flex;
   flex-direction: column;
 
-  gap: 46px; /* как ты просишь: иконка->h3 и h3->p [web:244] */
+  gap: 46px;
+  /* как ты просишь: иконка->h3 и h3->p [web:244] */
 
   padding: clamp(16px, 2vw, 24px);
   background: #fff;
@@ -239,6 +286,7 @@ html { font-family: "Jost", sans-serif; font-weight: 340;}
   line-height: 150%;
   color: #716d8d;
 }
+
 /* --------------------------------------------------------------------------------------------------------------- */
 
 /* SECTION */
@@ -260,7 +308,8 @@ html { font-family: "Jost", sans-serif; font-weight: 340;}
 
   /* 4 колонки на широком экране */
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 27px; /* расстояние между карточками [web:244] */
+  gap: 27px;
+  /* расстояние между карточками [web:244] */
 }
 
 /* 2 колонки на планшете */
@@ -281,12 +330,9 @@ html { font-family: "Jost", sans-serif; font-weight: 340;}
 
 /* CARD */
 .product-card {
-  /* “карточка около 428×642” — фиксировать пиксель-в-пиксель нельзя для мобилки,
-     поэтому задаём max, а вниз она сжимается сама */
   max-width: 428px;
   width: 100%;
   justify-self: center;
-
   display: flex;
   flex-direction: column;
 }
@@ -294,14 +340,12 @@ html { font-family: "Jost", sans-serif; font-weight: 340;}
 /* IMAGE */
 .product-card__img {
   width: 100%;
-  aspect-ratio: 429 / 524; /* держим пропорцию картинки */
-  object-fit: cover;       /* заполняет блок без искажения [web:333] */
+  aspect-ratio: 429 / 524;
   display: block;
 }
 
 /* Title is 30px below image */
 .product-card__title {
-  margin: 30px 0 0;
   font-weight: 400;
   font-size: 20px;
   line-height: 140%;
@@ -316,7 +360,6 @@ html { font-family: "Jost", sans-serif; font-weight: 340;}
    (у тебя title = “главный текст”, поэтому делаем: title->price = 30,
     а если нужен ещё один текст — добавишь .product-card__desc с margin-top:40) */
 .product-card__price {
-  margin: 30px 0 0;
   font-size: 18px;
   line-height: 150%;
   color: #211f2d;
@@ -327,16 +370,18 @@ html { font-family: "Jost", sans-serif; font-weight: 340;}
   /* центрируем саму кнопку */
   display: flex;
   width: fit-content;
-  margin: clamp(24px, 4vw, 48px) auto 0; /* сверху отступ, по бокам auto -> по центру */
+  /* сверху отступ, по бокам auto -> по центру */
 
   /* вид кнопки */
-  background-color: #f6f6f6; /* фон [web:352] */
+  background-color: #f6f6f6;
+  /* фон [web:352] */
   color: #211f2d;
   text-decoration: none;
   border: none;
 
   /* внутренние отступы как в макете */
-  padding: 34px 47px; /* top/bottom 34, left/right 47 [web:227] */
+  padding: 34px 47px;
+  /* top/bottom 34, left/right 47 [web:227] */
 
   /* минимальные габариты “как в макете” */
   min-width: 242px;
@@ -352,9 +397,29 @@ html { font-family: "Jost", sans-serif; font-weight: 340;}
   font-weight: 400;
 }
 
+/* hover */
+.products__cta:hover {
+  background-color: #efeff4;
+  border-color: rgba(33, 31, 45, 0.15);
+  transform: translateY(-1px);
+}
+
+/* focus */
+.products__cta:focus-visible {
+  outline: 2px solid #29244a;
+  outline-offset: 3px;
+}
+
+/* active */
+.products__cta:active {
+  transform: translateY(0);
+  box-shadow: none;
+  opacity: 0.9;
+}
+
 /* ------------------------------------ПОПУЛЯРНЫЕ ТОВАРЫ--------------------------------------------------------------------------- */
 /* 3 колонки */
-.products__grid--3 {
+.products__grid_cols_3 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 27px;
@@ -362,40 +427,244 @@ html { font-family: "Jost", sans-serif; font-weight: 340;}
 }
 
 /* Карточка: структура */
-.product-card--popular {
+.product-card_popular {
   display: flex;
   flex-direction: column;
 }
 
 /* Вот это и есть “высота как у дивана”:
    задаём высоту рамки (media), а картинки внутри НЕ обрезаем */
-.product-card--popular .product-card__media {
+.product-card_popular .product-card_media {
   width: 100%;
-  height: clamp(220px, 22vw, 375px); /* 375 — высота дивана в макете */
+  height: clamp(220px, 22vw, 375px);
+  /* 375 — высота дивана в макете */
 }
 
 /* Картинка заполняет рамку, но НЕ режется */
-.product-card--popular .product-card__img {
+.product-card_popular .product-card__img {
   width: 100%;
   height: 100%;
-  object-fit: contain;   /* ничего не обрезает, сохраняет пропорции [web:333] */
+  object-fit: contain;
+  /* ничего не обрезает, сохраняет пропорции [web:333] */
   display: block;
 }
 
-/* Тексты “привязаны” и всегда под картинкой */
-.product-card--popular .product-card__body {
-  padding-top: 40px; /* от картинки до текста */
+.product-card_popular .product-card__body {
+  padding-top: 40px;
 }
 
 /* Заголовок и цена */
-.product-card--popular .product-card__title {
-  margin: 0;
-  font-size: clamp(16px, 1.2vw, 20px); /* текст тоже адаптивно */
+.product-card_popular .product-card__title {
+  font-size: clamp(16px, 1.2vw, 20px);
   line-height: 140%;
 }
 
-.product-card--popular .product-card__price {
-  margin: 30px 0 0;
+.product-card_popular .product-card__price {
   font-size: clamp(14px, 1.1vw, 18px);
   line-height: 150%;
+}
+
+/* ------------------------------------ПОДПИШИТЕСЬ--------------------------------------------------------------------------- */
+
+
+
+.newsletter__box {
+  background: #fff;
+
+  width: 100%;
+  max-width: 1784px;
+  aspect-ratio: 1784 / 510;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.newsletter__title {
+  color: #211f2d;
+  font-weight: 400;
+  font-size: clamp(22px, 2.2vw, 32px);
+}
+
+.newsletter__text {
+  /* по макету */
+  color: #716d8d;
+  font-size: 16px;
+  line-height: 150%;
+  max-width: 60ch;
+}
+
+/* форма: общий блок 661×81, справа кнопка 168×81 */
+.newsletter__form {
+  width: min(661px, 100%);
+  height: 81px;
+
+  display: flex;
+  align-items: stretch;
+  /* одинаковая высота элементов */
+}
+
+.newsletter__input {
+  flex: 1;
+  /* занимает всё свободное место [web:75] */
+  height: 81px;
+
+  padding-inline: 24px;
+  border: 1px solid #e6e6e6;
+  border-right: none;
+  outline: none;
+
+  font: inherit;
+}
+
+.newsletter__btn {
+  flex: 0 0 168px;
+  height: 81px;
+
+  background: #2a254b;
+  /* если в макете другой — скажи */
+  color: #fff;
+  border: 1px solid #2a254b;
+  cursor: pointer;
+  font: inherit;
+}
+
+/* hover */
+.newsletter__btn:hover {
+  background-color: #241f3f;
+  border-color: #241f3f;
+}
+
+/* focus */
+.newsletter__btn:focus-visible {
+  outline: 2px solid #2a254b;
+  outline-offset: 3px;
+}
+
+/* active */
+.newsletter__btn:active {
+  transform: scale(0.99);
+  opacity: 0.92;
+}
+
+/* ------------------------------------ИСТОРИЯ-------------------------------------------------------------------------
+-- */
+.hero_ligt {
+  background: #fff;
+  color: #29244a;
+  aspect-ratio: auto;
+  overflow: visible;
+}
+
+.hero_light .hero__btn {
+  background: #f9f9f9;
+  color: #2a254b;
+  border: 0.5px solid #f9f9f9;
+}
+
+.hero_light .hero__title,
+.hero_light .hero__text {
+  color: #211f2d;
+  align-items: stretch;
+  overflow-wrap: anywhere;
+  color: #211f2d;
+  display: -webkit-box;
+  overflow: hidden;
+
+}
+
+.hero_light .hero__img {
+  object-fit: contain;
+}
+
+
+/*--------------------------------------ФУТЕР-------------------------------------------------*/
+.footer {
+  background: #29244a;
+  color: #fff;
+}
+
+
+.footer .container--footer {
+  max-width: 1284px;
+}
+
+
+.footer__top {
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 420px);
+  gap: 48px;
+  padding-block: 48px 32px;
+  align-items: start;
+}
+
+/* слева: 3 колонки */
+.footer__menus {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 48px;
+}
+
+.footer__title {
+  margin: 0 0 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #fff;
+}
+
+.footer__list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.footer__link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 150%;
+  opacity: 0.9;
+}
+
+.footer__link:hover {
+  opacity: 0.1;
+}
+
+
+
+/* низ: линия + копирайт */
+.footer__bottom {
+  border-top: 1px solid #4e4c92;
+  padding-block: 16px 24px;
+}
+
+.footer__copyright {
+  margin: 0;
+  font-size: 14px;
+  line-height: 150%;
+  opacity: 0.9;
+}
+
+.newsletter__input--footer {
+  background: #fff;
+  color: #494465;
+  border: 1px solid #fff;
+}
+
+@media (max-width: 900px) {
+  .footer__top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__menus {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .footer__menus {
+    grid-template-columns: 1fr;
+  }
 }

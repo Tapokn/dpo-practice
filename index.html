@@ -1,240 +1,259 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avion</title>
-    <link rel="icon" href="assets/logotipe.png" type="image/x-icon" sizes="64x64">
-    <link rel="stylesheet" href="styles/resetcss.css">
-    <link rel="stylesheet" href="styles/style.css">
-   
-     <!-- шрифты -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avion</title>
+  <link rel="icon" href="assets/logotipe.png" type="image/x-icon" sizes="64x64">
+  <link rel="stylesheet" href="styles/resetcss.css">
+  <link rel="stylesheet" href="styles/style.css">
+
+  <!-- шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
 </head>
 
-<body>  
-    <header class="header">
-            <a class="header__logo">Avion</a>
-        <div class="container container_place_header"></div>
-            <div class="header__actions">
-                <button class="header__action-btn" type="button" title="Поиск">
-                    <img src="assets/icons/search.png" alt="Поиск">
-                </button>
-                <button class="header__action-btn" type="button" title="Корзина">
-                    <img src="assets/icons/shopping--cart.png" alt="Корзина" >
-                </button>
-                <button class="header__action-btn" type="button" title="Профиль">
-                    <img src="assets/icons/avatar.png" alt="Профиль" >
-                </button>
-            </div>
-            <nav class="header__nav nav">
-                <ul class="nav__list">
-                    <li><a href="#hero">Главная</a></li>
-                    <li><a href="#difference">Отличия бренда</a></li>
-                    <li><a href="#newceramic">Новая керамика</a></li>
-                    <li><a href="#popular">Популярное</a></li>
-                    <li><a href="#club">Клуб</a></li>
-                    <li><a href="#history">История бренда</a></li>
-                </ul>
-            </nav>
-        
-       </div> 
-    </header>
-    
-    <main class="container container_place_main">
+<body class="page">
+  <header class="header">
+    <a class="header__logo">Avion</a>
+    <div class="header__actions">
+      <button class="header__action-btn" type="button" title="Поиск">
+        <img src="assets/icons/search.png" alt="Поиск">
+      </button>
+      <button class="header__action-btn" type="button" title="Корзина">
+        <img src="assets/icons/shopping--cart.png" alt="Корзина">
+      </button>
+      <button class="header__action-btn" type="button" title="Профиль">
+        <img src="assets/icons/avatar.png" alt="Профиль">
+      </button>
+    </div>
+    <nav class="header__nav nav">
+      <ul class="nav__list">
+        <li><a class="link" href="#hero">Главная</a></li>
+        <li><a class="link" href="#difference">Отличия бренда</a></li>
+        <li><a class="link" href="#newceramic">Новая керамика</a></li>
+        <li><a class="link" href="#popular">Популярное</a></li>
+        <li><a class="link" href="#club">Клуб</a></li>
+        <li><a class="link" href="#history">История бренда</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container container_place_main">
     <!-- Главный промо-блок -->
-    <section id="hero" class="hero hero--dark">
-        <div class="hero__content">
-            <h1 class="hero__title">Мебельный бренд для будущего с&nbsp;вечным дизайном</h1>
-            <a class="hero__btn" href="#">Смотреть коллекцию</a>
-            <p class="hero__text">Новая эра в&nbsp;экологичной мебели от&nbsp;Avion...</p>
-        </div>
+    <section id="hero" class="hero hero_dark">
+      <div class="hero__content">
+        <h1 class="hero__title">Мебельный бренд для будущего с&nbsp;вечным дизайном</h1>
+        <a class="hero__btn" href="#">Смотреть коллекцию</a>
+        <p class="hero__text">Новая эра в&nbsp;экологичной мебели от&nbsp;Avion...</p>
+      </div>
 
-        <div class="hero__media">
-            <img class="hero__img" src="assets/imj/Right_Image.png" alt="Дизайнерское кресло">
-        </div>
+      <div class="hero__media">
+        <img class="hero__img" src="assets/imj/Right_Image.png" alt="Дизайнерское кресло">
+      </div>
     </section>
-   
-    
+
+
     <!-- Преимущества бренда -->
-   <section id="difference" class="advantages">
-  <h2 class="advantages__title">Что отличает наш бренд</h2>
+    <section id="difference" class="page__section">
+      <h2 class="advantages__title">Что отличает наш бренд</h2>
 
-  <div class="advantages__grid">
-    <article class="advantages__item">
-      <img class="advantages__icon" src="assets/icons/delivery.png" alt="Доставка" width="24" height="24">
-      <h3 class="advantages__heading">Доставка на следующий день</h3>
-      <p class="advantages__text">Закажите до&nbsp;15:00 и&nbsp;получите заказ на&nbsp;следующий день</p>
-    </article>
+      <div class="advantages__grid">
+        <article class="advantages__item">
+          <img class="advantages__icon" src="assets/icons/delivery.png" alt="Доставка" width="24" height="24">
+          <h3 class="advantages__heading">Доставка на следующий день</h3>
+          <p class="advantages__text">Закажите до&nbsp;15:00 и&nbsp;получите заказ на&nbsp;следующий день</p>
+        </article>
 
-    <article class="advantages__item">
-      <img class="advantages__icon" src="assets/icons/chekmark.png" alt="Качество" width="24" height="24">
-      <h3 class="advantages__heading">Сделано из&nbsp;натуральных материалов</h3>
-      <p class="advantages__text">От&nbsp;кроватей до&nbsp;стульев&nbsp;&mdash; из&nbsp;природных материалов</p>
-    </article>
+        <article class="advantages__item">
+          <img class="advantages__icon" src="assets/icons/chekmark.png" alt="Качество" width="24" height="24">
+          <h3 class="advantages__heading">Сделано из&nbsp;натуральных материалов</h3>
+          <p class="advantages__text">От&nbsp;кроватей до&nbsp;стульев&nbsp;&mdash; из&nbsp;природных материалов</p>
+        </article>
 
-    <article class="advantages__item">
-      <img class="advantages__icon" src="assets/icons/purchase.png" alt="Покупка" width="24" height="24">
-      <h3 class="advantages__heading">Бесплатная доставка</h3>
-      <p class="advantages__text">Бесплатная доставка по&nbsp;Великобритании при заказе от&nbsp;£250</p>
-    </article>
+        <article class="advantages__item">
+          <img class="advantages__icon" src="assets/icons/purchase.png" alt="Покупка" width="24" height="24">
+          <h3 class="advantages__heading">Бесплатная доставка</h3>
+          <p class="advantages__text">Бесплатная доставка по&nbsp;Великобритании при заказе от&nbsp;£250</p>
+        </article>
 
-    <article class="advantages__item">
-      <img class="advantages__icon" src="assets/icons/sprout.png" alt="Упаковка" width="24" height="24">
-      <h3 class="advantages__heading">Перерабатываемая упаковка</h3>
-      <p class="advantages__text">Каждая наша упаковка&nbsp;&mdash; это 100% перерабатываемый материал.</p>
-    </article>
-  </div>
-</section>
+        <article class="advantages__item">
+          <img class="advantages__icon" src="assets/icons/sprout.png" alt="Упаковка" width="24" height="24">
+          <h3 class="advantages__heading">Перерабатываемая упаковка</h3>
+          <p class="advantages__text">Каждая наша упаковка&nbsp;&mdash; это 100% перерабатываемый материал.</p>
+        </article>
+      </div>
+    </section>
 
-    
+
     <!-- Новые керамические изделия -->
-   <section id="newceramic" class="products">
-  <h2 class="products__title">Новая керамика</h2>
+    <section id="newceramic" class="products">
+      <h2 class="products__title">Новая керамика</h2>
 
-  <div class="products__grid">
-    <article class="product-card">
-      <img class="product-card__img" src="assets/imj/Photo.png" alt="Кресло Dandy">
-      <h3 class="product-card__title"><a class="product-card__link" href="#">Кресло Dandy</a></h3>
-      <p class="product-card__price">£250</p>
-    </article>
+      <div class="products__grid">
+        <article class="product-card">
+          <img class="product-card__img" src="assets/imj/Photo.png" alt="Кресло Dandy">
+          <h3 class="product-card__title"><a class="product-card__link" href="#">Кресло Dandy</a></h3>
+          <p class="product-card__price">£250</p>
+        </article>
 
-    <article class="product-card">
-      <img class="product-card__img" src="assets/imj/Photo(4).png" alt="Набор деревянных ваз">
-      <h3 class="product-card__title"><a class="product-card__link" href="#">Набор деревянных ваз</a></h3>
-      <p class="product-card__price">£155</p>
-    </article>
+        <article class="product-card">
+          <img class="product-card__img" src="assets/imj/Photo(4).png" alt="Набор деревянных ваз">
+          <h3 class="product-card__title"><a class="product-card__link" href="#">Набор деревянных ваз</a></h3>
+          <p class="product-card__price">£155</p>
+        </article>
 
-    <article class="product-card">
-      <img class="product-card__img" src="assets/imj/Photo(1).png" alt="Шёлковая ваза">
-      <h3 class="product-card__title"><a class="product-card__link" href="#">Шёлковая ваза</a></h3>
-      <p class="product-card__price">£125</p>
-    </article>
+        <article class="product-card">
+          <img class="product-card__img" src="assets/imj/Photo(1).png" alt="Шёлковая ваза">
+          <h3 class="product-card__title"><a class="product-card__link" href="#">Шёлковая ваза</a></h3>
+          <p class="product-card__price">£125</p>
+        </article>
 
-    <article class="product-card">
-      <img class="product-card__img" src="assets/imj/Photo(2).png" alt="Лампа Lucy">
-      <h3 class="product-card__title"><a class="product-card__link" href="#">Лампа Lucy</a></h3>
-      <p class="product-card__price">£399</p>
-    </article>
-  </div>
+        <article class="product-card">
+          <img class="product-card__img" src="assets/imj/Photo(2).png" alt="Лампа Lucy">
+          <h3 class="product-card__title"><a class="product-card__link" href="#">Лампа Lucy</a></h3>
+          <p class="product-card__price">£399</p>
+        </article>
+      </div>
 
-  <a class="products__cta" href="#">Смотреть коллекцию</a>
-</section>
+      <a class="products__cta" href="#">Смотреть коллекцию</a>
+    </section>
 
-    
+
     <!-- Популярные товары -->
-    <section id="popular" class="products products--popular">
-  <h2 class="products__title">Наши популярные товары</h2>
+    <section id="popular" class="products products__popular">
+      <h2 class="products__title">Наши популярные товары</h2>
 
-  <div class="products__grid products__grid--3">
-    <article class="product-card product-card--popular">
-      <div class="product-card__media">
-        <img class="product-card__img" src="assets/imj/Large.png" alt="Диван Poplar из замши">
-      </div>
-      <div class="product-card__body">
-        <h3 class="product-card__title">
-          <a class="product-card__link" href="#">Диван Poplar из&nbsp;замши</a>
-        </h3>
-        <p class="product-card__price">£980</p>
-      </div>
-    </article>
+      <div class="products__grid .products__grid_cols_3">
+        <article class="product-card product-card__popular">
+          <div class="product-card_media">
+            <img class="product-card__img" src="assets/imj/Large.png" alt="Диван Poplar из замши">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__title">
+              <a class="product-card__link" href="#">Диван Poplar из&nbsp;замши</a>
+            </h3>
+            <p class="product-card__price">£980</p>
+          </div>
+        </article>
 
-    <article class="product-card product-card--popular">
-      <div class="product-card__media">
-        <img class="product-card__img" src="assets/imj/Photo.png" alt="Кресло Dandy">
-      </div>
-      <div class="product-card__body">
-        <h3 class="product-card__title"><a class="product-card__link" href="#">Кресло Dandy</a></h3>
-        <p class="product-card__price">£250</p>
-      </div>
-    </article>
+        <article class="product-card product-card__popular">
+          <div class="product-card_media">
+            <img class="product-card__img" src="assets/imj/Photo.png" alt="Кресло Dandy">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__title"><a class="product-card__link" href="#">Кресло Dandy</a></h3>
+            <p class="product-card__price">£250</p>
+          </div>
+        </article>
 
-    <article class="product-card product-card--popular">
-      <div class="product-card__media">
-        <img class="product-card__img" src="assets/imj/Photo(3).png" alt="Стул Dandy">
+        <article class="product-card product-card__popular">
+          <div class="product-card_media">
+            <img class="product-card__img" src="assets/imj/Photo(3).png" alt="Стул Dandy">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__title"><a class="product-card__link" href="#">Стул Dandy</a></h3>
+            <p class="product-card__price">£250</p>
+          </div>
+        </article>
       </div>
-      <div class="product-card__body">
-        <h3 class="product-card__title"><a class="product-card__link" href="#">Стул Dandy</a></h3>
-        <p class="product-card__price">£250</p>
-      </div>
-    </article>
-  </div>
 
-  <a class="products__cta" href="#">Смотреть коллекцию</a>
-</section>
+      <a class="products__cta" href="#">Смотреть коллекцию</a>
+    </section>
 
-    
+
     <!-- Подписка на рассылку -->
-    <section id="club">
-        <h2>Присоединяйтесь к&nbsp;клубу и&nbsp;получайте преимущества</h2>
-        <p>Подпишитесь на&nbsp;рассылку и&nbsp;получайте эксклюзивные предложения...</p>
-        <form>
-            <input type="email" placeholder="your@email.com">
-            <button>Подписаться</button>
+    <section id="club" class="newsletter">
+      <div class="newsletter__box">
+        <h2 class="newsletter__title">Присоединяйтесь к&nbsp;клубу и&nbsp;получайте преимущества</h2>
+        <p class="newsletter__text">Подпишитесь на&nbsp;рассылку и&nbsp;получайте эксклюзивные предложения...</p>
+
+        <form class="newsletter__form">
+          <input class="newsletter__input" type="email" placeholder="your@email.com">
+          <button class="newsletter__btn" type="submit">Подписаться</button>
         </form>
+      </div>
     </section>
-    
+
+
     <!-- История бренда -->
-    <section id="history">
-        <h2>От&nbsp;студии в&nbsp;Лондоне до&nbsp;глобального бренда</h2>
-        <p>Наш путь начался в&nbsp;маленькой лондонской студии, а&nbsp;сегодня Avion&nbsp;&mdash; глобальный бренд с&nbsp;сетью из&nbsp;более чем 400&nbsp;магазинов. В&nbsp;основе нашего роста&nbsp;&mdash; неизменная философия: дарить рынку безупречное качество по&nbsp;доступной цене.
-Мы&nbsp;живем и&nbsp;дышим идеей создания мебели и&nbsp;предметов интерьера ручной работы, в&nbsp;которые вложена душа. Это вдохновение привело к&nbsp;открытию нашего бутика в&nbsp;Челси, вскоре ставшего культовым местом притяжения для ценителей дизайна в&nbsp;Лондоне.</p>
-        <button>Связаться с&nbsp;нами</button>
+    <section id="history" class="hero hero_light">
+      <div class="hero__content">
+        <a class="hero__btn" href="#">Смотреть коллекцию</a>
+        <h1 class="hero__title">От&nbsp;студии в&nbsp;Лондоне до&nbsp;глобального бренда</h1>
+        <p class="hero__text">Наш путь начался в&nbsp;маленькой лондонской студии, а&nbsp;сегодня Avion&nbsp;&mdash;
+          глобальный бренд с&nbsp;сетью из&nbsp;более чем 400&nbsp;магазинов. В&nbsp;основе нашего роста&nbsp;&mdash;
+          неизменная философия: дарить рынку безупречное качество по&nbsp;доступной цене.
+          Мы&nbsp;живем и&nbsp;дышим идеей создания мебели и&nbsp;предметов интерьера ручной работы, в&nbsp;которые
+          вложена душа. Это вдохновение привело к&nbsp;открытию нашего бутика в&nbsp;Челси, вскоре ставшего культовым
+          местом притяжения для ценителей дизайна в&nbsp;Лондоне.</p>
+      </div>
+      <div class="hero__media">
+        <img class="hero__img" src="assets\imj\Image.png" alt="Дизайнерское кресло">
+      </div>
     </section>
-    </div>
-    </main>
-   
- 
- <footer class="container container_place_footer">
-    <div>
-        <section>
-            <h4>Меню</h4>
-            <ul>
-                <li><a href="#">Новые поступления</a></li>
-                <li><a href="#">Бестселлеры</a></li>
-                <li><a href="#">Недавно просмотренные</a></li>
-                <li><a href="#">Популярное на неделе</a></li>
-                <li><a href="#">Все товары</a></li>
+  </main>
+
+
+  <footer class="footer">
+    <div class="container container--footer">
+      <div class="footer__top">
+        <div class="footer__menus">
+          <section class="footer__menu">
+            <h4 class="footer__title">Меню</h4>
+            <ul class="footer__list">
+              <li class="footer__item"><a class="footer__link" href="#">Новые поступления</a></li>
+              <li class="footer__item"><a class="footer__link" href="#">Бестселлеры</a></li>
+              <li class="footer__item"><a class="footer__link" href="#">Недавно просмотренные</a></li>
+              <li class="footer__item"><a class="footer__link" href="#">Популярное на неделе</a></li>
+              <li class="footer__item"><a class="footer__link" href="#">Все товары</a></li>
             </ul>
-        </section>
-        
-        <section>
-            <h4>Категории</h4>
-            <ul>
-                <li><a href="#">Посуда</a></li>
-                <li><a href="#">Мебель</a></li>
-                <li><a href="#">Домашний текстиль</a></li>
-                <li><a href="#">Цветочные горшки</a></li>
-                <li><a href="#">Стулья</a></li>
+          </section>
+
+          <section class="footer__menu">
+            <h4 class="footer__title">Категории</h4>
+            <ul class="footer__list">
+              <li class="footer__item"><a class="footer__link" href="#">Посуда</a></li>
+              <li class="footer__item"><a class="footer__link" href="#">Мебель</a></li>
+              <li class="footer__item"><a class="footer__link" href="#">Домашний текстиль</a></li>
+              <li class="footer__item"><a class="footer__link" href="#">Цветочные горшки</a></li>
+              <li class="footer__item"><a class="footer__link" href="#">Стулья</a></li>
             </ul>
-        </section>
-        
-        <section>
-            <h4>Наша компания</h4>
-            <ul>
-                <li><a href="#">О нас</a></li>
-                <li><a href="#">Вакансии</a></li>
-                <li><a href="#">Контакты</a></li>
-                <li><a href="#">Конфиденциальность</a></li>
-                <li><a href="#">Политика возврата</a></li>
+          </section>
+
+          <section class="footer__menu">
+            <h4 class="footer__title">Наша компания</h4>
+            <ul class="footer__list">
+              <li class="footer__item"><a class="footer__link" href="#">О нас</a></li>
+              <li class="footer__item"><a class="footer__link" href="#">Вакансии</a></li>
+              <li class="footer__item"><a class="footer__link" href="#">Контакты</a></li>
+              <li class="footer__item"><a class="footer__link" href="#">Конфиденциальность</a></li>
+              <li class="footer__item"><a class="footer__link" href="#">Политика возврата</a></li>
             </ul>
+          </section>
+        </div>
+
+        <section class="footer__subscribe">
+          <h4 class="footer__title">Подписка на рассылку</h4>
+          <form class="newsletter__form newsletter__form--inverse">
+            <input class="newsletter__input newsletter__input--inverse newsletter__input--footer" type="email"
+              placeholder="your@email.com">
+            <button class="newsletter__btn newsletter__btn--inverse" type="submit">Подписаться</button>
+          </form>
         </section>
-        
-        <section>
-            <h4>Подписка на рассылку</h4>
-            <form>
-                <input type="email" placeholder="ваш@email.com">
-                <button type="submit">Подписаться</button>
-            </form>
-        </section>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">Copyright 2022 Avion LTD</p>
+      </div>
     </div>
-    
-    <div>
-        <p>Copyright 2022 Avion LTD</p>
-    </div>
-</footer>
+  </footer>
+
 </body>
+
 </html>
