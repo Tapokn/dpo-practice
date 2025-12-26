@@ -16,6 +16,15 @@ body {
   overflow-x: hidden;
   box-sizing: border-box;
 } */
+@media (max-width: 480px) {
+
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+
+  }
+}
 
 /* ---------------------------------------------КОНТЕЙНЕРЫ ДЛЯ ОТСУПОВ------------------------------------------------------------------ */
 /* .container {
@@ -69,7 +78,8 @@ body {
 .header__actions {
   display: flex;
   justify-content: flex-end;
-  gap: 0.5rem;
+  gap: 1rem;
+
 }
 
 
@@ -94,8 +104,8 @@ body {
 
 @media (max-width: 480px) {
   .header__logonav {
-    /* Добавляем зазор между левой пустотой, лого и кнопками */
-    gap: 2rem;
+    gap: 1.5rem;
+
   }
 
   .header__logo {
@@ -107,7 +117,7 @@ body {
 
   .header__actions {
     /* Уменьшаем расстояние между самими иконками */
-    gap: 0.1rem;
+    gap: 0.3rem;
   }
 
   .header__action-btn {
@@ -179,57 +189,44 @@ body {
 
 /* -----------------------------------------------БЛОК 1 ГЕРОЙ----------------------------------------------------------- */
 .hero {
-  aspect-ratio: 1678 / 766;
-  /* если нужно сохранять пропорцию */
+  /* aspect-ratio: 1678 / 766; */
   display: flex;
 }
-
-
 
 .hero_dark {
   background: #29244a;
   color: #fff;
 }
 
-/* левая колонка = 656/1100 ≈ 59.64% */
 .hero__content {
-  flex: 0 1 min(996px, 59.75%);
-  /* padding: top/bottom 110, left/right 90 */
-  padding: clamp(20px, 6vw, 110px) clamp(16px, 5vw, 90px);
+  flex: 1.2;
   display: flex;
   flex-direction: column;
-  gap: clamp(12px, 1.8vw, 20px);
+  padding: clamp(1rem, 5vw, 5rem);
+  box-sizing: border-box;
+}
+
+.hero__text {
+  font-size: clamp(0.5rem, 1.5vw, 1.1rem);
+  opacity: 0.8;
+  line-height: 1.2;
 }
 
 
 .hero__title,
 .hero__text {
-  margin: 0;
   color: #fff;
+  margin-bottom: auto;
 }
 
 .hero__btn {
-  width: var(--btn-w);
-  height: var(--btn-h);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  background: rgba(255, 255, 255, 0.2);
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.1);
   color: #fff;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  padding: 14px 30px;
-  font-family: var(--font-family);
-
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
-  outline: 0;
-
-  margin-bottom: 15px;
-  transition: background .3s ease-in-out, border .3s ease-in-out, opacity .3s ease-in-out;
-
+  padding: 1rem 1rem;
+  font-size: 0.5rem;
+  margin-bottom: auto;
 }
 
 /* hover */
@@ -264,6 +261,42 @@ body {
 }
 
 
+
+@media (max-width: 480px) {
+
+
+  .hero__content {
+    padding: 5%;
+    gap: 9%;
+    justify-content: space-between;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .hero__text {
+    font-size: clamp(0.01rem, 0.1vw, 2rem);
+  }
+
+  .hero__title {
+    font-size: 0.65rem;
+    line-height: 1.1;
+    margin-bottom: 0;
+  }
+
+  .hero__btn {
+    /* Кнопка тоже уменьшается, иначе она вытолкнет текст за пределы ratio */
+    padding: 2vw 4vw;
+    font-size: 0.45rem;
+    margin-bottom: 0;
+  }
+
+  .hero__media {
+    /* Картинка ДОЛЖНА сжиматься, чтобы сохранить ряд */
+    flex: 1;
+    min-width: 0;
+  }
+
+}
 
 /* ---------------------------------------------БЛОК 2 ОТЛИЧИЯ----------------------------------------------------------------- */
 .page__section {
@@ -415,9 +448,7 @@ body {
   text-decoration: none;
 }
 
-/* Text is 40px below image, and price 30px below text
-   (у тебя title = “главный текст”, поэтому делаем: title->price = 30,
-    а если нужен ещё один текст — добавишь .product-card__desc с margin-top:40) */
+
 .product-card__price {
   font-size: 18px;
   line-height: 150%;
@@ -430,7 +461,8 @@ body {
   display: flex;
   width: fit-content;
   /* сверху отступ, по бокам auto -> по центру */
-
+  margin-left: auto;
+  margin-right: auto;
   /* вид кнопки */
   background-color: #f6f6f6;
   /* фон [web:352] */
