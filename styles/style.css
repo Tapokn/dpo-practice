@@ -69,7 +69,6 @@ body {
 .header__actions {
   display: flex;
   justify-content: flex-end;
-  flex-flow: row wrap;
   gap: 0.5rem;
 }
 
@@ -91,6 +90,32 @@ body {
   object-fit: contain;
 }
 
+/* Внеси эти правки в свои медиа-запросы */
+
+@media (max-width: 480px) {
+  .header__logonav {
+    /* Добавляем зазор между левой пустотой, лого и кнопками */
+    gap: 2rem;
+  }
+
+  .header__logo {
+    /* Уменьшаем шрифт, чтобы логотип занимал меньше места и не толкал кнопки */
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    /* Убираем нижний отступ, чтобы лого не "подпрыгивало" */
+  }
+
+  .header__actions {
+    /* Уменьшаем расстояние между самими иконками */
+    gap: 0.1rem;
+  }
+
+  .header__action-btn {
+    /* Уменьшаем внутренние отступы кнопок, чтобы они стояли плотнее */
+    padding: 0.2rem;
+  }
+}
+
 /* НАВИГАЦИЯ ПОД ЛОГОТИПОМ */
 .header__nav {
   width: 100%;
@@ -100,13 +125,35 @@ body {
   font-family: "Jost", sans-serif;
   font-weight: 350;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   list-style: none;
   justify-content: center;
   align-items: center;
-  /*mobile*/
   flex-wrap: wrap;
-  /*mobile*/
+
+}
+
+/* Мобильная адаптация mobile */
+@media (max-width: 480px) {
+  .nav__list {
+    flex-direction: column;
+    /* Выстраиваем в столбик */
+    gap: 0.5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav__list li {
+    width: 100%;
+    /* Каждый пункт на всю ширину */
+    border-bottom: 1px solid #f9f9f9;
+    /* Легкая разделительная линия */
+  }
+
+  .link {
+    display: block;
+    padding: 10px 0;
+  }
 }
 
 /* базовый вид ссылки меню */
