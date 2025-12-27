@@ -38,8 +38,13 @@ body {
 } */
 
 /* .container_place_main {
-  padding-inline: clamp(16px, 7vw, 104px);
-} */
+  /* padding-inline: clamp(16px, 7vw, 104px); */
+  /* width: 100%; */
+  /* max-width: 1440px; или ваш размер макета */
+  /* margin-inline: auto;
+  padding-inline: clamp(10px, 4vw, 104px); */
+  /* box-sizing: border-box; */
+/* }*/ 
 
 /* .container_place_footer {
   padding-inline: clamp(16px, 7vw, 115px);
@@ -100,7 +105,6 @@ body {
   object-fit: contain;
 }
 
-/* Внеси эти правки в свои медиа-запросы */
 
 @media (max-width: 480px) {
   .header__logonav {
@@ -121,7 +125,6 @@ body {
   }
 
   .header__action-btn {
-    /* Уменьшаем внутренние отступы кнопок, чтобы они стояли плотнее */
     padding: 0.2rem;
   }
 }
@@ -191,6 +194,10 @@ body {
 .hero {
   /* aspect-ratio: 1678 / 766; */
   display: flex;
+  container-type: inline-size;
+  container-name: hero;
+  /* Добавляем box-sizing, чтобы паддинги не расширяли блок */
+  box-sizing: border-box;
 }
 
 .hero_dark {
@@ -202,14 +209,19 @@ body {
   flex: 1.2;
   display: flex;
   flex-direction: column;
-  padding: clamp(1rem, 5vw, 5rem);
+  padding: clamp(1rem, 5cqw, 5rem);
   box-sizing: border-box;
 }
-
+.hero__title {
+  /* Заголовок тоже плавно растет */
+  font-size: clamp(1.25rem, 3.5cqw, 2.5rem);
+  margin-bottom: auto;
+}
 .hero__text {
-  font-size: clamp(0.5rem, 1.5vw, 1.1rem);
+  font-size: clamp(0.9rem, 2.5cqw, 1.2rem);
   opacity: 0.8;
   line-height: 1.2;
+  margin-bottom: auto;
 }
 
 
@@ -224,8 +236,8 @@ body {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
   text-decoration: none;
-  padding: 1rem 1rem;
-  font-size: 0.5rem;
+  padding: 2cqw 4cqw;
+  font-size: 1.5rem;
   margin-bottom: auto;
 }
 
@@ -266,15 +278,15 @@ body {
 
 
   .hero__content {
-    padding: 5%;
-    gap: 9%;
+    padding: 8%;
+    gap: 15%;
     justify-content: space-between;
     min-width: 0;
     min-height: 0;
   }
-
+ 
   .hero__text {
-    font-size: clamp(0.01rem, 0.1vw, 2rem);
+    font-size: clamp(0.6rem, 0.2vw, 2rem);
   }
 
   .hero__title {
@@ -460,19 +472,17 @@ body {
   /* центрируем саму кнопку */
   display: flex;
   width: fit-content;
-  /* сверху отступ, по бокам auto -> по центру */
   margin-left: auto;
   margin-right: auto;
   /* вид кнопки */
   background-color: #f6f6f6;
-  /* фон [web:352] */
   color: #211f2d;
   text-decoration: none;
   border: none;
 
   /* внутренние отступы как в макете */
   padding: 34px 47px;
-  /* top/bottom 34, left/right 47 [web:227] */
+  margin-top: 9vw; /*сглаживаем отсупы которые возникли между секциями*/
 
   /* минимальные габариты “как в макете” */
   min-width: 242px;
@@ -563,13 +573,14 @@ body {
   background: #fff;
 
   width: 100%;
-  max-width: 1784px;
-  aspect-ratio: 1784 / 510;
+  max-width: 1784px;  
 
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  gap: clamp(16px, 2vw, 32px);
+  padding: 3rem 0;
 }
 
 .newsletter__title {
@@ -579,7 +590,6 @@ body {
 }
 
 .newsletter__text {
-  /* по макету */
   color: #716d8d;
   font-size: 16px;
   line-height: 150%;
@@ -593,7 +603,6 @@ body {
 
   display: flex;
   align-items: stretch;
-  /* одинаковая высота элементов */
 }
 
 .newsletter__input {
@@ -644,7 +653,7 @@ body {
 .hero_ligt {
   background: #fff;
   color: #29244a;
-  aspect-ratio: auto;
+  
   overflow: visible;
 }
 
