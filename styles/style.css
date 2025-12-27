@@ -192,11 +192,7 @@ body {
 
 /* -----------------------------------------------БЛОК 1 ГЕРОЙ----------------------------------------------------------- */
 .hero {
-  /* aspect-ratio: 1678 / 766; */
   display: flex;
-  container-type: inline-size;
-  container-name: hero;
-  /* Добавляем box-sizing, чтобы паддинги не расширяли блок */
   box-sizing: border-box;
 }
 
@@ -209,16 +205,15 @@ body {
   flex: 1.2;
   display: flex;
   flex-direction: column;
-  padding: clamp(1rem, 5cqw, 5rem);
+  padding: clamp(1rem, 5vw, 5rem);
   box-sizing: border-box;
 }
 .hero__title {
-  /* Заголовок тоже плавно растет */
-  font-size: clamp(1.25rem, 3.5cqw, 2.5rem);
+  font-size: clamp(1.25rem, 3.5vw, 2.5rem);
   margin-bottom: auto;
 }
 .hero__text {
-  font-size: clamp(0.9rem, 2.5cqw, 1.2rem);
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   opacity: 0.8;
   line-height: 1.2;
   margin-bottom: auto;
@@ -236,7 +231,7 @@ body {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
   text-decoration: none;
-  padding: 2cqw 4cqw;
+  padding: 2vw 4vw;
   font-size: 1.5rem;
   margin-bottom: auto;
 }
@@ -275,39 +270,57 @@ body {
 
 
 @media (max-width: 480px) {
-
-
+  .hero {
+    flex-direction: column; /* Вертикальное расположение */
+    padding: 20px;
+    gap: 20px;
+    max-width: 100%; /* Ограничиваем ширину */
+  }
+  
   .hero__content {
-    padding: 8%;
-    gap: 15%;
-    justify-content: space-between;
-    min-width: 0;
-    min-height: 0;
+    width: 100%;
+    max-width: 100%; /* Занимаем всю доступную ширину */
+    text-align: justify; /* ВЫРАВНИВАНИЕ ПО ШИРИНЕ! */
+    text-align-last: center; /* Последняя строка по центру для красоты */
   }
- 
-  .hero__text {
-    font-size: clamp(0.6rem, 0.2vw, 2rem);
-  }
-
+  
   .hero__title {
-    font-size: 0.65rem;
-    line-height: 1.1;
-    margin-bottom: 0;
+    font-size: 24px;
+    margin-bottom: 16px;
+    text-align: center; /* Заголовок оставляем по центру */
   }
-
+  
+  .hero__text {
+    font-size: 16px;
+    margin-bottom: 5px;
+    line-height: 1.5; /* Улучшаем читаемость */
+    text-align: justify; /* ВЫРАВНИВАНИЕ ПО ШИРИНЕ! */
+    hyphens: auto; /* Автоматическое переносы для красоты */
+  }
+  
   .hero__btn {
-    /* Кнопка тоже уменьшается, иначе она вытолкнет текст за пределы ratio */
-    padding: 2vw 4vw;
-    font-size: 0.45rem;
-    margin-bottom: 0;
+    padding: 16px 32px;
+    font-size: 16px;
+    display: block; /* Чтобы margin: 0 auto работал */
+    margin: 0 auto; /* Центрируем кнопку */
+    width: fit-content; /* Ширина по содержимому */
+    min-width: 200px; /* Минимальная ширина */
+    text-align: center; /* Текст кнопки по центру */
+    margin-bottom: 16px;
   }
-
+  
   .hero__media {
-    /* Картинка ДОЛЖНА сжиматься, чтобы сохранить ряд */
-    flex: 1;
-    min-width: 0;
+    width: 100%;
+    max-width: 100%;
   }
-
+  
+  .hero__img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block; /* Убираем отступ снизу */
+  }
 }
 
 /* ---------------------------------------------БЛОК 2 ОТЛИЧИЯ----------------------------------------------------------------- */
@@ -339,7 +352,7 @@ body {
 }
 
 /* 1 колонка */
-@media (max-width: 560px) {
+@media (max-width: 480px) {
   .advantages__grid {
     grid-template-columns: 1fr;
   }
@@ -425,7 +438,7 @@ body {
 }
 
 /* 1 колонка на телефоне */
-@media (max-width: 560px) {
+@media (max-width: 480px) {
   .products__grid {
     grid-template-columns: 1fr;
     gap: 16px;
@@ -565,6 +578,28 @@ body {
   line-height: 150%;
 }
 
+/* 2 колонки на планшете */
+@media (max-width: 1024px) {
+  .products__grid_cols_3{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+/* 1 колонка на телефоне */
+@media (max-width: 480px) {
+  .products__grid_cols_3 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    /* transform: scale(0.9); Уменьшает весь элемент на 10% */
+    /* transform-origin: center; Центр масштабирования */
+  }
+  /* .product-card__popular .product-card__title,
+  .product-card__popular .product-card__price {
+    text-align: center;
+  } */
+  
+}
 /* ------------------------------------ПОДПИШИТЕСЬ--------------------------------------------------------------------------- */
 
 
@@ -650,17 +685,12 @@ body {
 
 /* ------------------------------------ИСТОРИЯ-------------------------------------------------------------------------
 -- */
-.hero_ligt {
-  background: #fff;
-  color: #29244a;
-  
-  overflow: visible;
-}
 
 .hero_light .hero__btn {
   background: #f9f9f9;
   color: #2a254b;
   border: 0.5px solid #f9f9f9;
+  overflow: visible;
 }
 
 .hero_light .hero__title,
@@ -669,7 +699,6 @@ body {
   align-items: stretch;
   overflow-wrap: anywhere;
   color: #211f2d;
-  display: -webkit-box;
   overflow: hidden;
 
 }
@@ -677,6 +706,19 @@ body {
 .hero_light .hero__img {
   object-fit: contain;
 }
+
+/* Инвертированная версия (светлая) */
+.newsletter__btn--inverse {
+  background: #494465;
+  color: #ffffff;
+  border-color: #494465;
+}
+/* Ховер для инвертированной */
+.newsletter__btn--inverse:hover {
+  background: #6e698a;
+  border-color: #6e698a;
+}
+
 
 
 /*--------------------------------------ФУТЕР-------------------------------------------------*/
@@ -755,21 +797,87 @@ body {
   border: 1px solid #fff;
 }
 
-@media (max-width: 900px) {
+
+/* АДАПТАЦИЯ ДЛЯ МОБИЛОК 480PX */
+@media (max-width: 480px) {
   .footer__top {
     grid-template-columns: 1fr;
+    gap: 32px; /* Уменьшаем отступ между основной частью и формой */
+    padding-block: 32px 24px; /* Уменьшаем вертикальные отступы */
+    text-align: center; /* Центрируем весь текст */
   }
 
-  .footer__menus {
-    grid-template-columns: repeat(2, minmax(160px, 1fr));
-  }
-}
-
-
-
-
-@media (max-width: 560px) {
+  /* МЕНЮ: 1 колонка с разделителями */
   .footer__menus {
     grid-template-columns: 1fr;
+    gap: 0; /* Убираем gap, используем padding для разделения */
+    width: 100%;
+    max-width: 280px; /* Ограничиваем ширину для лучшей читаемости */
+    margin: 0 auto; /* Центрируем блок меню */
+  }
+
+  /* Каждый блок меню с границей снизу */
+  .footer__menus > * {
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Полупрозрачная светлая граница */
+  }
+
+  /* Убираем границу у последнего элемента */
+  .footer__menus > *:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  /* Первый элемент - без отступа сверху */
+  .footer__menus > *:first-child {
+    padding-top: 0;
+  }
+
+  /* Заголовки в меню */
+  .footer__title {
+    font-size: 18px; /* Немного увеличиваем для мобилок */
+    margin-bottom: 16px;
+    color: #fff;
+    opacity: 0.95;
+  }
+
+  /* Список ссылок */
+  .footer__list {
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем ссылки */
+  }
+
+  /* Ссылки */
+  .footer__link {
+    font-size: 14px;
+    opacity: 0.8;
+    padding: 4px 0; /* Добавляем паддинг для удобного тапа */
+    display: inline-block;
+    transition: opacity 0.2s ease;
+  }
+
+  .footer__link:hover {
+    opacity: 1;
+  }
+
+  
+
+ 
+
+  /* НИЖНЯЯ ЧАСТЬ ФУТЕРА */
+  .footer__bottom {
+    padding-block: 20px;
+    text-align: center; /* Центрируем текст */
+  }
+
+  .footer__copyright {
+    font-size: 12px; /* Чуть уменьшаем на мобилках */
+    opacity: 0.7;
+    max-width: 280px;
+    margin: 0 auto; /* Центрируем */
+    line-height: 1.6;
   }
 }
+
