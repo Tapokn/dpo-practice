@@ -35,7 +35,13 @@
         </button>
       </div>
     </div>
-    <nav class="header__nav nav">
+    <!-- Гамбургер-кнопка (видна на планшетах и мобильных) --> 
+      <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false">
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+      </button>
+    <nav id="mainNav" class="header__nav nav">
       <ul class="nav__list">
         <li><a class="link" href="#hero">Главная</a></li>
         <li><a class="link" href="#difference">Отличия бренда</a></li>
@@ -257,7 +263,7 @@
       </div>
     </div>
   </footer>
-
+<script src="scripts/menu.js"></script>
 </body>
 
 </html>

@@ -16,6 +16,44 @@ body {
   overflow-x: hidden;
   box-sizing: border-box;
 }
+/* ---------------------------------------------БУРГЕР-МЕНЮ------------------------------------------------------------------ */
+/* Гамбургер-кнопка (скрыта на десктопе) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* базовый размер */
+  height: 35px;
+  background: transparent;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  z-index: 1003;
+}
+.menu-toggle__line {
+  width: 100%;
+  height: 4px; /* толщина чуть больше, чем у основного текста */
+  background: var(--text-color, #211f2d);
+  border-radius: 3px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+  transform-origin: center;
+  display: block;
+}
+/* Состояние открытого меню (крестик) */
+.menu-toggle.active .menu-toggle__line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.menu-toggle.active .menu-toggle__line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.menu-toggle.active .menu-toggle__line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+} 
+
+
+
 
 /* ---------------------------------------------КОНТЕЙНЕРЫ ДЛЯ ОТСУПОВ------------------------------------------------------------------ */
 .container {
@@ -30,7 +68,7 @@ body {
 .container_place_main {
   width: 100%;
   max-width: 1440px; 
-   padding-inline: clamp(10px, 4vw, 104px); 
+  padding-inline: clamp(10px, 4vw, 104px); 
   box-sizing: border-box; }
 
 .container_place_footer {
@@ -42,8 +80,10 @@ body {
 .header {
   padding: 1rem;
   background: #fff;
+  position: relative; /* чтобы абсолютные элементы (бургер, действия) позиционировались внутри шапки */
+  --header-height: 64px; /* базовая высота шапки (используется для отступа меню) */
 
-}
+} 
 
 .header__logonav {
   display: flex;
@@ -96,23 +136,114 @@ body {
 @media (max-width: 480px) {
   .header__logonav {
     gap: 1.5rem;
+    position: relative; /* Чтобы абсолютные элементы внутри позиционировались относительно шапки */
 
   }
 
   .header__logo {
     /* Уменьшаем шрифт, чтобы логотип занимал меньше места и не толкал кнопки */
     font-size: 1.2rem;
+    margin: 0 auto; /* Центрируем логотип в шапке */
     margin-bottom: 0;
     /* Убираем нижний отступ, чтобы лого не "подпрыгивало" */
   }
 
   .header__actions {
-    /* Уменьшаем расстояние между самими иконками */
-    gap: 0.3rem;
+    /* Переносим набор иконок в левую часть шапки */
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 0.6rem;
+    justify-content: flex-start;
+    align-items: center; /* по центру по вертикали */
+    z-index: 1000; /* ниже оверлея */
+  }
+
+  .header__empty {
+    display: none; /* Освобождаем место */
   }
 
   .header__action-btn {
     padding: 0.2rem;
+  }
+
+  /* Показываем бургер-кнопку на мобильных (выровнена по центру шапки) */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 6px; /* интервал между линиями */
+    position: absolute;
+    right: clamp(12px, 4vw, 24px);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1003;
+    width: 40px; /* не больше размера логотипа */
+    height: 40px;
+    padding: 6px;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-radius: 8px;
+  }
+
+  .menu-toggle__line {
+    background: #211f2d;
+    width: 100%;
+    height: 4px; /* чуть толще для видимости */
+    border-radius: 3px;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+    display: block;
+  }
+
+  /* Скрываем основную навигацию на мобильных, показываем бургер */
+  .header__nav {
+    display: none;
+  }
+
+  /* Навигация в раскрытом состоянии: центрируем по видимой области */
+  .header__nav.active {
+    display: flex;
+    position: fixed; /* фиксируем относительно окна */
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    justify-content: center; /* горизонтальное центрирование */
+    align-items: flex-start; /* начинаем под шапкой */
+    z-index: 1004; /* над оверлеем */
+    background: transparent;
+    pointer-events: none; /* блокируем клики по пустым областям (оверлей обрабатывает клики) */
+  }
+
+  /* Сама панель меню (внутренний контейнер) */
+  .header__nav.active .nav__list {
+    pointer-events: auto; /* внутри панели клики работают */
+    background: #fff;
+    margin-top: calc(var(--header-height, 64px) + 8px); /* ниже шапки */
+    padding: 16px 24px;
+    width: min(720px, 90vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(33,31,45,0.08);
+    z-index: 1005; /* над всем, чтобы не перекрывался оверлеем */
+  }
+
+  /* Стили для оверлея (подложка при открытом меню) */
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1002; /* выше иконок, ниже панели меню */
+  }
+
+  .nav-overlay.active {
+    display: block;
   }
 }
 
@@ -853,7 +984,7 @@ body {
 
   
 
- 
+
 
   /* НИЖНЯЯ ЧАСТЬ ФУТЕРА */
   .footer__bottom {
