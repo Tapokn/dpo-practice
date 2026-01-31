@@ -76,10 +76,28 @@ if (menuToggle && mainNav) {
 
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    scrollBtn.addEventListener('click', () => {
+    function triggerScrollTop() {
         scrollBtn.classList.add('pressed');
-        setTimeout(() => scrollBtn.classList.remove('pressed'), 500); // 0.5s как просил
+        setTimeout(() => scrollBtn.classList.remove('pressed'), 500);
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Обрабатываем pointerdown/touchstart, чтобы сработать сразу при нажатии во время инерционного скролла
+    scrollBtn.addEventListener('pointerdown', (e) => {
+        if (e.cancelable) e.preventDefault();
+        triggerScrollTop();
+    });
+
+    // Fallback для старых мобильных браузеров — touchstart с passive:false
+    scrollBtn.addEventListener('touchstart', (e) => {
+        if (e.cancelable) e.preventDefault();
+        triggerScrollTop();
+    }, { passive: false });
+
+    // click — запасной вариант для десктопа
+    scrollBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        triggerScrollTop();
     });
 
     // начальная проверка
