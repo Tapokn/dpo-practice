@@ -359,7 +359,7 @@ body {
   margin-bottom: auto;
 }
 .hero__text {
-  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   opacity: 0.8;
   line-height: 1.2;
   margin-bottom: auto;
@@ -720,7 +720,7 @@ body {
 }
 
 .product-card_popular .product-card__price {
-  font-size: clamp(14px, 1.1vw, 18px);
+  font-size: clamp(16px, 1.1vw, 18px);
   line-height: 150%;
 }
 
@@ -911,7 +911,7 @@ body {
 .footer__link {
   color: #fff;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 150%;
   opacity: 0.9;
 }
@@ -999,7 +999,7 @@ body {
 
   /* Ссылки */
   .footer__link {
-    font-size: 14px;
+    font-size: 16px;
     opacity: 0.8;
     padding: 4px 0; /* Добавляем паддинг для удобного тапа */
     display: inline-block;
@@ -1027,6 +1027,40 @@ body {
     margin: 0 auto; /* Центрируем */
     line-height: 1.6;
   }
-  
+
+  /* Кнопка «Наверх» — показывается только на мобильных */
+  .scroll-top {
+    position: fixed;
+    right: clamp(12px, 4vw, 20px);
+    bottom: 16px;
+    width: 44px;
+    height: 44px;
+    background: rgba(255,255,255,0.6);
+    color: #211f2d;
+    border: none;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    z-index: 1007;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, background 0.15s ease;
+    pointer-events: none;
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .scroll-top.visible {
+    opacity: 0.6; /* полупрозрачна когда видна */
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .scroll-top.pressed {
+    opacity: 1; /* становится непрозрачной при нажатии */
+  }
+
 }
 

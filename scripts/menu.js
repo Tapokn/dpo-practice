@@ -51,3 +51,37 @@ if (menuToggle && mainNav) {
         }
     });
 }
+
+// ----------------------------------------------------------------
+// Кнопка «Наверх» (мобильная): появляется при скролле, при клике — плавно наверх
+// ----------------------------------------------------------------
+(function() {
+    const scrollBtn = document.getElementById('scrollTop');
+    if (!scrollBtn) return;
+
+    const SHOW_AT = 200; // показать кнопку после этого скролла (px)
+    let visible = false;
+
+    function onScroll() {
+        if (window.scrollY > SHOW_AT && !visible) {
+            visible = true;
+            scrollBtn.classList.add('visible');
+            scrollBtn.setAttribute('aria-hidden', 'false');
+        } else if (window.scrollY <= SHOW_AT && visible) {
+            visible = false;
+            scrollBtn.classList.remove('visible');
+            scrollBtn.setAttribute('aria-hidden', 'true');
+        }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    scrollBtn.addEventListener('click', () => {
+        scrollBtn.classList.add('pressed');
+        setTimeout(() => scrollBtn.classList.remove('pressed'), 500); // 0.5s как просил
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // начальная проверка
+    onScroll();
+})();
