@@ -23,8 +23,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 40px; /* базовый размер */
-  height: 35px;
+  width: 30px; /* базовый размер */
+  height: 30px;
   background: transparent;
   border: none;
   padding: 6px;
@@ -179,8 +179,8 @@ body {
     top: 50%;
     transform: translateY(-50%);
     z-index: 1003;
-    width: 40px; /* не больше размера логотипа */
-    height: 40px;
+    width: 30px; /* не больше размера логотипа */
+    height: 30px;
     padding: 6px;
     align-items: center;
     justify-content: center;
@@ -244,6 +244,34 @@ body {
 
   .nav-overlay.active {
     display: block;
+  }
+
+  /* Фиксируем и подсвечиваем кнопку закрытия (крестик), чтобы она не обрезалась и была выше оверлея */
+  .menu-toggle {
+    transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .menu-toggle.active {
+    position: fixed; /* фиксируем в окне, чтобы не попадать под обрезку */
+    right: clamp(12px, 4vw, 24px);
+    top: 12px; /* маленький отступ от верхней границы */
+    transform: none; /* убираем translateY(-50%) при активном состоянии */
+    z-index: 1006; /* выше панели меню (1005) */
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+    background: rgba(255,255,255,0.6); /* подсветка, полупрозрачная */
+    backdrop-filter: blur(6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-toggle.active .menu-toggle__line {
+    background: rgba(33,31,45,0.95); /* тёмные линии, не затемнённые */
+    opacity: 1;
   }
 }
 
