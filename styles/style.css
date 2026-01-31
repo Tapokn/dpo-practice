@@ -10,6 +10,14 @@
   color: #716d8d;
 }
 
+/* Убираем дефолтную голубую подсветку на мобильных и добавляем мягкую, круглую подсветку при таче/нажатии */
+a, button, .link, .header__action-btn, .menu-toggle, .product-card__link, .products__cta, .newsletter__btn {
+  -webkit-tap-highlight-color: transparent; /* убирает дефолтный синий flash в WebKit/Blink */
+  -webkit-touch-callout: none;
+  position: relative; /* чтобы псевдоэлемент подсветки позиционировался относительно элемента */
+  z-index: 0; /* создаём контекст для ::after */
+}
+
 
 html,
 body {
@@ -17,7 +25,7 @@ body {
   box-sizing: border-box;
 }
 /* ---------------------------------------------БУРГЕР-МЕНЮ------------------------------------------------------------------ */
-/* Гамбургер-кнопка (скрыта на десктопе) */
+/* Гамбургер-кнопка  */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -1060,6 +1068,28 @@ body {
 
   .scroll-top.pressed {
     opacity: 1; /* становится непрозрачной при нажатии */
+  }
+
+  /* Кнопки-иконки: при нажатии подсветка как у кнопки 'Наверх' */
+  .header__action-btn,
+  .menu-toggle {
+    background: transparent;
+    transition: background 150ms ease, box-shadow 150ms ease, opacity 150ms ease, transform 80ms ease;
+    border-radius: 10px;
+    padding: 6px; /* повышаем зону клика и место для подсветки */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Состояние нажатия — визуально как у .scroll-top.pressed */
+  .header__action-btn:active,
+  .menu-toggle:active,
+  .header__action-btn.pressed,
+  .menu-toggle.pressed {
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    opacity: 1;
   }
 
 }
