@@ -21,6 +21,17 @@ if (menuToggle && mainNav) {
 
         // Блокируем скролл при открытом меню
         document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+
+        // Если меню открыто — показываем шапку (если она была скрыта)
+        const headerEl = document.querySelector('.header');
+        if (headerEl) {
+            if (mainNav.classList.contains('active')) {
+                headerEl.classList.remove('header--hidden');
+                headerEl.classList.add('header--visible');
+            } else {
+                headerEl.classList.remove('header--visible');
+            }
+        }
     }
 
     // Обработчики событий
@@ -102,4 +113,77 @@ if (menuToggle && mainNav) {
 
     // начальная проверка
     onScroll();
+})();
+
+// ----------------------------------------------------------------
+// Автоскрытие шапки на мобилках: скрываем при прокрутке вниз, показываем при прокрутке вверх
+// ----------------------------------------------------------------
+(function() {
+    const header = document.querySelector('.header');
+    if (!header) return;
+
+    let lastY = window.scrollY;
+    let ticking = false;
+    let enabled = window.innerWidth <= 480;
+
+    function enable() {
+        header.classList.add('header--fixed');
+        // Надёжно выставим padding у body чтобы контент не "прыгнул"
+        document.body.style.paddingTop = header.offsetHeight + 'px';
+    }
+
+    function disable() {
+        header.classList.remove('header--fixed');
+        header.classList.remove('header--hidden');
+        header.classList.remove('header--visible');
+        document.body.style.paddingTop = '';
+    }
+
+    function handleScroll() {
+        const y = window.scrollY;
+        const dy = y - lastY;
+
+        // небольшая толерантность к мелким изменениям
+        if (Math.abs(dy) < 5) return;
+
+        // Если меню открыто — держим шапку видимой
+        const menuOpen = document.getElementById('menuToggle')?.classList.contains('active');
+        if (menuOpen) {
+            header.classList.remove('header--hidden');
+            lastY = y;
+            return;
+        }
+
+        if (y <= 0) {
+            // вверху страницы — точно показываем
+            header.classList.remove('header--hidden');
+        } else if (dy > 0 && y > header.offsetHeight) {
+            // скролл вниз — скрываем
+            header.classList.add('header--hidden');
+        } else if (dy < 0) {
+            // скролл вверх — показываем
+            header.classList.remove('header--hidden');
+        }
+
+        lastY = y;
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!enabled) return;
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+
+    window.addEventListener('resize', () => {
+        const should = window.innerWidth <= 480;
+        if (should && !enabled) { enabled = true; enable(); }
+        if (!should && enabled) { enabled = false; disable(); }
+    });
+
+    if (enabled) enable();
 })();
